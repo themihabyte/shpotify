@@ -45,15 +45,15 @@ class _FormWidget extends StatefulWidget {
 }
 
 class _FormWidgetState extends State<_FormWidget> {
-  final _usernameTextController = TextEditingController();
-  final _passwordTextController = TextEditingController();
+  final _usernameTextController = TextEditingController(text: 'admin');
+  final _passwordTextController = TextEditingController(text: 'admin');
   bool rememberMe = false;
 
   void _auth(){
     final username = _usernameTextController.text;
     final password = _passwordTextController.text;
     if (username == 'admin' && password == 'admin'){
-      print('login');
+      Navigator.of(context).pushReplacementNamed('/main_screen');
     }
   }
   @override
