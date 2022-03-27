@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shpotify/widgets/your_library/your_library.dart';
 
 class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
   static const List<Widget> _widgetOptions = <Widget>[
     Text('Home'),
     Text('Search'),
-    Text('Your Library'),
+    YourLibraryWidget(),
   ];
 
   void onSelectTab(int index) {
