@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shpotify/widgets/auth/auth_widget.dart';
+import 'package:shpotify/widgets/main_screen/main_screen_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +24,17 @@ class MyApp extends StatelessWidget {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
           textStyle: TextStyle(letterSpacing: 1.5, fontWeight: FontWeight.w700),
           padding: EdgeInsets.symmetric(vertical: 14, horizontal: 32)),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black45
         )
       ),
-      home: const AuthWidget(),
+      routes: {
+        '/auth': (context) => AuthWidget(),
+        '/main_screen': (context) => MainScreenWidget(),
+      },
+      initialRoute: '/auth',
     );
   }
 }
