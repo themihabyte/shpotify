@@ -10,7 +10,7 @@ class MainScreenWidget extends StatefulWidget {
 
 class _MainScreenWidgetState extends State<MainScreenWidget> {
   int _selectedTab = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     Text('Home'),
     Text('Search'),
     YourLibraryWidget(),
@@ -26,8 +26,9 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions[_selectedTab],
+      body: IndexedStack(
+        index: _selectedTab,
+        children: _widgetOptions,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,
